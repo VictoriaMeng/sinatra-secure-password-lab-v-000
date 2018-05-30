@@ -82,6 +82,10 @@ class ApplicationController < Sinatra::Base
     def empty_input?(params)
       params.values.map(&:strip).include?("")
     end
+
+    def withdrawal_error
+      "Withdrawal amount can't be greater than balance."
+    end
   end
 
 end
