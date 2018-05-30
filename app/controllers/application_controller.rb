@@ -61,6 +61,7 @@ class ApplicationController < Sinatra::Base
   end
 
   patch "/withdraw" do
+    balance = current_user.balance - params[:withdrawal]
   end
 
   helpers do
