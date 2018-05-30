@@ -1,7 +1,7 @@
 <h1>Welcome</h1>
 
 <% if session[:failed_withdrawal?] %>
-  <%= @failed_withdrawal %>
+  <%= withdrawal_error %>
 <% end %>
 
 Balance: <%= current_user.balance %>
