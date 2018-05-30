@@ -7,4 +7,9 @@ Balance: <%= current_user.balance %>
   Deposit: <input type="float" name="deposit">
   <input type="submit">
 </form>
+<form method="POST" action="/withdraw">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  Withdraw: <input type="float" name="withdrawal">
+  <input type="submit">
+</form>
 <p><a href="/logout">Log Out</a></p>
