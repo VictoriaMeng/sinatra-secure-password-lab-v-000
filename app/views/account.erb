@@ -1,6 +1,6 @@
 <h1>Welcome</h1>
 
-<% if @failed_withdrawal %>
+<% if session[:failed_withdrawal?] %>
   <%= @failed_withdrawal %>
 <% end %>
 
