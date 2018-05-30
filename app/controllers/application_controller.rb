@@ -65,8 +65,7 @@ class ApplicationController < Sinatra::Base
     if balance >= 0
       current_user.update(balance: balance)
     else
-      @failed_withdrawal = "Withdrawal amount can't be greater than balance"
-      binding.pry
+      session[:failed_withdrawal?] = true
     end
     redirect "/account"
   end
