@@ -57,7 +57,6 @@ class ApplicationController < Sinatra::Base
   patch "/deposit" do
     balance = current_user.balance + params[:deposit].to_f
     current_user.update(balance: balance)
-    binding.pry
     redirect "/account"
   end
 
