@@ -1,4 +1,4 @@
 require './app/controllers/application_controller'
 
-user Rack::MethodOverride
+use Rack::MethodOverride
 run ApplicationController
