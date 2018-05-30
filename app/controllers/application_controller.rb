@@ -55,12 +55,14 @@ class ApplicationController < Sinatra::Base
   end
 
   patch "/deposit" do
+    session[:failed_withdrawal?] = false
     balance = current_user.balance + params[:deposit].to_f
     current_user.update(balance: balance)
     redirect "/account"
   end
 
   patch "/withdraw" do
+    session[:failed_withdrawal?] = false
     balance = current_user.balance - params[:withdrawal].to_f
     if balance >= 0
       current_user.update(balance: balance)
