@@ -2,7 +2,7 @@
 
 <% if session[:failed_withdrawal?] %>
   <%= withdrawal_error %>
-<% end %>
+<% end %><br>
 
 Balance: <%= current_user.balance %>
 <form method="POST" action="/deposit">
