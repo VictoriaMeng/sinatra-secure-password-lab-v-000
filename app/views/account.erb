@@ -4,7 +4,7 @@
   <%= withdrawal_error %>
 <% end %><br><br>
 
-Balance: <%= current_user.balance %>
+Balance: <%= current_user.balance %><br><br>
 <form method="POST" action="/deposit">
   <input id="hidden" type="hidden" name="_method" value="patch">
   Deposit: <input type="float" name="deposit">
