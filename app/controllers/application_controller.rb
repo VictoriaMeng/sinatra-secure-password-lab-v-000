@@ -27,7 +27,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-    @user = User.find(session[:user_id])
     erb :account
   end
 
@@ -53,6 +52,12 @@ class ApplicationController < Sinatra::Base
   get "/logout" do
     session.clear
     redirect "/"
+  end
+
+  post "/deposit" do
+    User.find(session[:user_id]).balance = current_user.balance + params[:deposit].to_f
+    binding.pry
+    redirect "/account"
   end
 
   helpers do

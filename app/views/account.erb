@@ -1,5 +1,9 @@
 <h1>Welcome</h1>
 
 <p>We are currently working on your account.</p>
-
+Balance: <%= current_user.balance %>
+<form method="POST" action="/deposit">
+  Deposit: <input type="float" name="deposit">
+  <input type="submit">
+</form>
 <p><a href="/logout">Log Out</a></p>
