@@ -62,6 +62,10 @@ class ApplicationController < Sinatra::Base
 
   patch "/withdraw" do
     balance = current_user.balance - params[:withdrawal]
+    if balance >= 0
+      current_user.update(balance: balance)
+    end
+    redirect "/account"
   end
 
   helpers do
