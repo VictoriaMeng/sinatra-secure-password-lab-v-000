@@ -3,6 +3,7 @@
 <p>We are currently working on your account.</p>
 Balance: <%= current_user.balance %>
 <form method="POST" action="/deposit">
+  <input id="hidden" type="hidden" name="_method" value="patch">
   Deposit: <input type="float" name="deposit">
   <input type="submit">
 </form>
