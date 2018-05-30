@@ -1,6 +1,9 @@
 <h1>Welcome</h1>
 
-<p>We are currently working on your account.</p>
+<% if @failed_withdrawal %>
+  "Cannot withdraw amount greater than balance"
+<% end %>
+
 Balance: <%= current_user.balance %>
 <form method="POST" action="/deposit">
   <input id="hidden" type="hidden" name="_method" value="patch">
